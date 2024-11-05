@@ -1,0 +1,63 @@
+/* Center the container */
+.two-factor-auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fafafa;
+  }
+
+  .two-factor-auth-box {
+    background: white;
+    padding: 40px;
+    min-width: 300px;
+    text-align: center;
+    border: 1px solid #dbdbdb;
+  }
+  
+  /* Title styling */
+  .two-factor-auth-title {
+    font-family: 'Arial', sans-serif;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #262626;
+    margin-bottom: 10px;
+  }
+  
+  /* Input styling */
+  .two-factor-auth-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  
+  .two-factor-auth-input:focus {
+    border-color: #a8a8a8;
+  }
+  
+  /* Verify button */
+  .two-factor-auth-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #0095f6;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .two-factor-auth-button:hover {
+    background-color: #007bb5;
+  }
+  
+  

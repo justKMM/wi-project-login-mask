@@ -1,0 +1,8 @@
+<div class="two-factor-auth-container">
+    <form class="two-factor-auth-box" (ngSubmit)="verifyCode()">
+        <h2 class="two-factor-auth-title">Two-Factor Authentication</h2>
+        <p>Your 2FA code is: {{ generatedCode }}</p>
+        <input class="two-factor-auth-input" type="text" placeholder="Enter 2FA Code" [(ngModel)]="inputCode" name="inputCode" required />
+        <button class="two-factor-auth-button" type="submit">Verify Code</button>
+    </form>
+</div>

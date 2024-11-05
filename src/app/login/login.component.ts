@@ -12,11 +12,11 @@ export class LoginComponent {
 
   constructor(private router: Router) {}
 
-  onSubmit() {
+  verifyUser() {
     // Simulate login check (replace this with actual authentication)
     if (this.username === 'testuser' && this.password === 'password') {
       localStorage.setItem('isLoggedIn', 'true');
-      this.router.navigate(['/private']);
+      this.router.navigate(['/two-factor-auth']);
     } else {
       alert('Invalid username or password');
     }

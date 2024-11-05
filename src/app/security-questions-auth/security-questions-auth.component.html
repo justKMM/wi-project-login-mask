@@ -1,0 +1,37 @@
+<form (ngSubmit)="verifyAnswers()" class="security-questions-container">
+    <div class="security-questions-title">Security Question</div>
+    <div class="security-questions-instructions">
+      Please answer the security questions below to verify your identity.
+    </div>
+
+    <label class="security-question-label">{{ question1 }}</label>
+    <input
+      type="text"
+      class="security-answer-input"
+      placeholder="Enter your answer"
+      [(ngModel)]="inputAnswer1"
+      name="firstQuestion"
+    />
+    <label class="security-question-label">{{ question2 }}</label>
+    <input
+      type="text"
+      class="security-answer-input"
+      placeholder="Enter your answer"
+      [(ngModel)]="inputAnswer2"
+      name="secondQuestion"
+    />
+    <label class="security-question-label">{{ question3 }}</label>
+    <input
+      type="text"
+      class="security-answer-input"
+      placeholder="Enter your answer"
+      [(ngModel)]="inputAnswer3"
+      name="thirdQuestion"
+    />
+
+    <button class="security-verify-button">Verify</button>
+    <div class="security-questions-footer">
+      Having trouble? <a href="#">Contact Support</a>
+    </div>
+</form>
+  

@@ -1,6 +1,8 @@
 # Base image
 FROM nginx:alpine
 
+COPY nginx.conf /etc/nginx/nginx.conf
+
 # Copy the built Angular files from `dist/login-mask/browser` to NGINX's HTML directory
 COPY ./dist/login-mask/browser /usr/share/nginx/html
 
