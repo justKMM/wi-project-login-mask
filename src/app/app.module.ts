@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { PrivateComponent } from './private/private.component';
 import { TwoFactorAuthComponent } from './two-factor-auth/two-factor-auth.component';
 import { SecurityQuestionsAuthComponent } from './security-questions-auth/security-questions-auth.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SecurityQuestionsAuthComponent } from './security-questions-auth/securi
     LoginComponent,
     TwoFactorAuthComponent,
     SecurityQuestionsAuthComponent,
-    PrivateComponent
+    PrivateComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

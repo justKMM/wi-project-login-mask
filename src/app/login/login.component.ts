@@ -9,16 +9,40 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   username: string = '';
   password: string = '';
+  usernameError: string = '';
+  passwordError: string = '';
+  isLoading: boolean = false;
+
 
   constructor(private router: Router) {}
 
   verifyUser() {
-    // Simulate login check (replace this with actual authentication)
-    if (this.username === 'testuser' && this.password === 'password') {
-      localStorage.setItem('isLoggedIn', 'true');
-      this.router.navigate(['/two-factor-auth']);
-    } else {
-      alert('Invalid username or password');
+    // Reset errors
+    this.usernameError = '';
+    this.passwordError = '';
+    
+    // Basic validation
+    if (!this.username) {
+      this.usernameError = 'Username is required';
+      return;
     }
+    if (!this.password) {
+      this.passwordError = 'Password is required';
+      return;
+    }
+    // Show loading state
+    this.isLoading = true;
+    // Simulate login check
+    setTimeout(() => {
+      console.log('Attempting to log in with:', this.username);
+      this.isLoading = false;
+      if (this.username === 'testuser' && this.password === 'password') {
+        localStorage.setItem('isLoggedIn', 'true');
+        this.router.navigate(['/two-factor-auth']);
+      } else {
+        this.passwordError = 'Invalid username or password';
+      }
+    }, 1000);
+    
   }
 }

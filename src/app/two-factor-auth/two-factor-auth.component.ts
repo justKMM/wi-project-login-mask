@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,28 +6,52 @@ import { Router } from '@angular/router';
   templateUrl: './two-factor-auth.component.html',
   styleUrls: ['./two-factor-auth.component.css']
 })
-export class TwoFactorAuthComponent {
+export class TwoFactorAuthComponent implements OnInit, OnDestroy {
   inputCode: string = '';
   generatedCode: string = '';
+  showError: boolean = false;
+  timeLeft: number = 300; // 5 minutes in seconds
+  private timer: any;
 
-  constructor(private router: Router) {
-    // Generate a random 4-digit code when the component is initialized
+  constructor(private router: Router) {}
+
+  ngOnInit() {
     this.generate2FACode();
+    this.startTimer();
+  }
+
+  ngOnDestroy() {
+    if (this.timer) {
+      clearInterval(this.timer);
+    }
   }
 
   generate2FACode() {
-    // Generate a random 4-digit code
     this.generatedCode = Math.floor(1000 + Math.random() * 9000).toString();
-    console.log('Generated 2FA Code:', this.generatedCode); // For debugging purposes
+    this.timeLeft = 300; // Reset timer when new code is generated
+    console.log('Generated 2FA Code:', this.generatedCode);
+  }
+
+  startTimer() {
+    this.timer = setInterval(() => {
+      if (this.timeLeft > 0) {
+        this.timeLeft--;
+      } else {
+        this.generate2FACode(); // Generate new code when timer expires
+      }
+    }, 1000);
   }
 
   verifyCode() {
     if (this.inputCode === this.generatedCode) {
       localStorage.setItem('isTwoFactorAuthenticated', 'true');
-      console.log(localStorage.getItem('isTwoFactorAuthenticated'))
       this.router.navigate(['/security-questions-auth']);
     } else {
-      alert('Invalid 2FA code. Please try again.');
+      this.showError = true;
+      setTimeout(() => {
+        this.showError = false;
+      }, 3000); // Hide error after 3 seconds
+      this.inputCode = ''; // Clear input on error
     }
   }
 }

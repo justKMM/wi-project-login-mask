@@ -1,63 +1,132 @@
-/* Center the container */
-.two-factor-auth-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #fafafa;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+.two-factor-auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  margin: 0;
+  padding: 0;
+}
+
+.two-factor-auth-box {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+}
+
+.two-factor-auth-title {
+  color: #262626;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.code-display {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  font-family: monospace;
+  font-size: 2rem;
+  letter-spacing: 8px;
+  color: #405de6;
+  font-weight: bold;
+  border: 2px dashed #dbdbdb;
+}
+
+.instruction-text {
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.two-factor-auth-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 4px;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.two-factor-auth-input:focus {
+  border-color: #405de6;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(64, 93, 230, 0.2);
+}
+
+.two-factor-auth-button {
+  width: 100%;
+  background: #405de6;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.two-factor-auth-button:hover {
+  background: #5851db;
+}
+
+.two-factor-auth-button:active {
+  transform: scale(0.98);
+}
+
+.error-message {
+  color: #ed4956;
+  font-size: 14px;
+  margin-top: 8px;
+  display: none;
+}
+
+.error-message.visible {
+  display: block;
+}
+
+/* Timer styles */
+.timer {
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+/* Animation keyframes */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
   .two-factor-auth-box {
-    background: white;
-    padding: 40px;
-    min-width: 300px;
-    text-align: center;
-    border: 1px solid #dbdbdb;
+    margin: 1rem;
+    padding: 1.5rem;
   }
   
-  /* Title styling */
-  .two-factor-auth-title {
-    font-family: 'Arial', sans-serif;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #262626;
-    margin-bottom: 10px;
+  .code-display {
+    font-size: 1.75rem;
+    letter-spacing: 6px;
   }
-  
-  /* Input styling */
-  .two-factor-auth-input {
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #dbdbdb;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    outline: none;
-    transition: border-color 0.2s;
-  }
-  
-  .two-factor-auth-input:focus {
-    border-color: #a8a8a8;
-  }
-  
-  /* Verify button */
-  .two-factor-auth-button {
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    color: #ffffff;
-    background-color: #0095f6;
-    border: none;
-    border-radius: 5px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .two-factor-auth-button:hover {
-    background-color: #007bb5;
-  }
-  
-  
+}

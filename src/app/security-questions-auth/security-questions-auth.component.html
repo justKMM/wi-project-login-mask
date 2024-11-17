@@ -1,37 +1,71 @@
-<form (ngSubmit)="verifyAnswers()" class="security-questions-container">
-    <div class="security-questions-title">Security Question</div>
+<div class="security-questions-container">
+  <!-- Progress indicator -->
+  <div class="progress-indicator">
+    <div class="progress-step active"></div>
+    <div class="progress-step active"></div>
+    <div class="progress-step active"></div>
+  </div>
+
+  <form (ngSubmit)="verifyAnswers()" class="security-questions-box">
+    <div class="security-questions-title">Security Questions</div>
     <div class="security-questions-instructions">
-      Please answer the security questions below to verify your identity.
+      Please answer the security questions below to verify your identity. 
+      Answers are case-sensitive.
     </div>
 
-    <label class="security-question-label">{{ question1 }}</label>
-    <input
-      type="text"
-      class="security-answer-input"
-      placeholder="Enter your answer"
-      [(ngModel)]="inputAnswer1"
-      name="firstQuestion"
-    />
-    <label class="security-question-label">{{ question2 }}</label>
-    <input
-      type="text"
-      class="security-answer-input"
-      placeholder="Enter your answer"
-      [(ngModel)]="inputAnswer2"
-      name="secondQuestion"
-    />
-    <label class="security-question-label">{{ question3 }}</label>
-    <input
-      type="text"
-      class="security-answer-input"
-      placeholder="Enter your answer"
-      [(ngModel)]="inputAnswer3"
-      name="thirdQuestion"
-    />
+    <div class="question-group">
+      <label class="security-question-label">{{ question1 }}</label>
+      <input
+        type="text"
+        class="security-answer-input"
+        placeholder="Enter your answer"
+        [(ngModel)]="inputAnswer1"
+        name="firstQuestion"
+        required
+        [class.error]="showError && inputAnswer1 !== answer1"
+      />
+    </div>
 
-    <button class="security-verify-button">Verify</button>
+    <div class="question-group">
+      <label class="security-question-label">{{ question2 }}</label>
+      <input
+        type="text"
+        class="security-answer-input"
+        placeholder="Enter your answer"
+        [(ngModel)]="inputAnswer2"
+        name="secondQuestion"
+        required
+        [class.error]="showError && inputAnswer2 !== answer2"
+      />
+    </div>
+
+    <div class="question-group">
+      <label class="security-question-label">{{ question3 }}</label>
+      <input
+        type="text"
+        class="security-answer-input"
+        placeholder="Enter your answer"
+        [(ngModel)]="inputAnswer3"
+        name="thirdQuestion"
+        required
+        [class.error]="showError && inputAnswer3 !== answer3"
+      />
+    </div>
+
+    <div class="error-message" [class.visible]="showError && (inputAnswer1 != answer1 || inputAnswer2 != answer2 || inputAnswer3 !== answer3)">
+      One or more answers are incorrect.
+    </div>
+
+    <button 
+      class="security-verify-button" 
+      type="submit"
+      [disabled]="!inputAnswer1 || !inputAnswer2 || !inputAnswer3"
+    >
+      Verify Answers
+    </button>
+
     <div class="security-questions-footer">
       Having trouble? <a href="#">Contact Support</a>
     </div>
-</form>
-  
+  </form>
+</div>

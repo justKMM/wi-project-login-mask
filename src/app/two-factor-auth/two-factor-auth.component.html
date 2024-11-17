@@ -1,8 +1,41 @@
 <div class="two-factor-auth-container">
     <form class="two-factor-auth-box" (ngSubmit)="verifyCode()">
-        <h2 class="two-factor-auth-title">Two-Factor Authentication</h2>
-        <p>Your 2FA code is: {{ generatedCode }}</p>
-        <input class="two-factor-auth-input" type="text" placeholder="Enter 2FA Code" [(ngModel)]="inputCode" name="inputCode" required />
-        <button class="two-factor-auth-button" type="submit">Verify Code</button>
+      <h2 class="two-factor-auth-title">Two-Factor Authentication</h2>
+      
+      <p class="instruction-text">
+        Please enter the verification code shown below to continue
+      </p>
+      
+      <div class="code-display">
+        {{ generatedCode }}
+      </div>
+      
+      <input 
+        class="two-factor-auth-input"
+        type="text"
+        placeholder="Enter code"
+        [(ngModel)]="inputCode"
+        name="inputCode"
+        maxlength="4"
+        pattern="\d*"
+        autocomplete="off"
+        required
+      />
+      
+      <button 
+        class="two-factor-auth-button" 
+        type="submit"
+        [disabled]="!inputCode || inputCode.length !== 4"
+      >
+        Verify Code
+      </button>
+      
+      <div class="error-message" [class.visible]="showError">
+        Invalid code. Please try again.
+      </div>
+      
+      <div class="timer" *ngIf="timeLeft">
+        Code expires in: {{ timeLeft }} seconds
+      </div>
     </form>
-</div>
+  </div>
