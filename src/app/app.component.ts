@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'login-mask';
+  title = 'instakilogram';
 
   constructor(private router: Router) {
     if (localStorage.getItem('isLoggedIn') != 'true') 
