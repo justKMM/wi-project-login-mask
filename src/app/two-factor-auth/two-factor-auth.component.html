@@ -15,8 +15,8 @@
         type="text"
         placeholder="Enter code"
         [(ngModel)]="inputCode"
-        name="inputCode"
-        maxlength="4"
+        name="code-input"
+        maxlength="2"
         pattern="\d*"
         autocomplete="off"
         required
@@ -25,7 +25,7 @@
       <button 
         class="two-factor-auth-button" 
         type="submit"
-        [disabled]="!inputCode || inputCode.length !== 4"
+        [disabled]="!inputCode || inputCode.length !== 2"
       >
         Verify Code
       </button>

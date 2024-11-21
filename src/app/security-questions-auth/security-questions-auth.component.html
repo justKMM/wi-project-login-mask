@@ -20,9 +20,9 @@
         class="security-answer-input"
         placeholder="Enter your answer"
         [(ngModel)]="inputAnswer1"
-        name="firstQuestion"
+        name="question-input-1"
         required
-        [class.error]="showError && inputAnswer1 !== answer1"
+        [class.error]="showError"
       />
     </div>
 
@@ -33,9 +33,9 @@
         class="security-answer-input"
         placeholder="Enter your answer"
         [(ngModel)]="inputAnswer2"
-        name="secondQuestion"
+        name="question-input-2"
         required
-        [class.error]="showError && inputAnswer2 !== answer2"
+        [class.error]="showError"
       />
     </div>
 
@@ -46,9 +46,9 @@
         class="security-answer-input"
         placeholder="Enter your answer"
         [(ngModel)]="inputAnswer3"
-        name="thirdQuestion"
+        name="question-input-3"
         required
-        [class.error]="showError && inputAnswer3 !== answer3"
+        [class.error]="showError"
       />
     </div>
 
@@ -59,7 +59,7 @@
     <button 
       class="security-verify-button" 
       type="submit"
-      [disabled]="!inputAnswer1 || !inputAnswer2 || !inputAnswer3"
+      
     >
       Verify Answers
     </button>

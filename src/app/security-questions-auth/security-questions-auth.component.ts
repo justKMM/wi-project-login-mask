@@ -12,7 +12,7 @@ export class SecurityQuestionsAuthComponent {
     'What is your mother\'s maiden name?', 
     'What is the city you were born in?'
   ];
-  answers: string[] = ['Leo', 'Müller', 'Ingelsheim'];
+  answers: string[] = ['Leo', 'Nguyen', 'Darmstadt'];
   index1: number = 0;
   index2: number = 1;
   index3: number = 2;
@@ -26,27 +26,17 @@ export class SecurityQuestionsAuthComponent {
   inputAnswer2: string = '';
   inputAnswer3: string = '';
   showError: boolean = false;
-  attemptCount: number = 0;
-  maxAttempts: number = 3;
 
   constructor(private router: Router) {}
 
   verifyAnswers() {
     this.showError = true;
-    this.attemptCount++;
 
-    if (this.inputAnswer1 === this.answer1 && 
-        this.inputAnswer2 === this.answer2 && 
-        this.inputAnswer3 === this.answer3) {
-      
+    if (this.inputAnswer1 == this.answer1 && 
+        this.inputAnswer2 == this.answer2 && 
+        this.inputAnswer3 == this.answer3) {
       localStorage.setItem('isSecurityQuestionsAuthenticated', 'true');
-      this.router.navigate(['/private']);
-    } else {
-      if (this.attemptCount >= this.maxAttempts) {
-        // Implement account lockout or additional security measures
-        alert('Maximum attempts reached. Please contact support.');
-        this.router.navigate(['/login']);
-      }
-    }
+      this.router.navigate(['/home']);
+    } 
   }
 }

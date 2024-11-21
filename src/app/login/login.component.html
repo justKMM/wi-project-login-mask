@@ -1,18 +1,19 @@
 <div class="login-container">
   <div class="login-box">
     <h2>Instakilogram</h2>
+    <div name="login-success" *ngIf="loginSuccess">Login Success. Redirecting...</div>
     <form (ngSubmit)="verifyUser()">
       <div>
         <input
           type="text"
           placeholder="Username"
           [(ngModel)]="username"
-          name="username"
+          name="username-input"
           required
-          [class.error]="usernameError"
+          [class.error]="loginError"
         />
-        <div class="error-message" *ngIf="usernameError">
-          {{ usernameError }}
+        <div class="error-message" *ngIf="loginError">
+          {{ loginError }}
         </div>
       </div>
       <div>
@@ -20,12 +21,12 @@
           type="password"
           placeholder="Password"
           [(ngModel)]="password"
-          name="password"
+          name="password-input"
           required
-          [class.error]="passwordError"
+          [class.error]="loginError"
         />
-        <div class="error-message" *ngIf="passwordError">
-          {{ passwordError }}
+        <div class="error-message" *ngIf="loginError">
+          {{ loginError }}
         </div>
       </div>
       <button type="submit" [disabled]="isLoading">
