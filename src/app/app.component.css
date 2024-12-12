@@ -1,3 +1,29 @@
 .main-content {
     margin: 0 auto;
 }
+
+.disclaimer {
+    margin: 16px;
+    padding: 16px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.disclaimer-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.disclaimer-icon {
+    color: #1976d2;
+    font-style: normal;
+}
+
+.disclaimer p {
+    margin: 0;
+    color: rgba(0,0,0,0.87);
+    font-size: 14px;
+    line-height: 1.5;
+}

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment_variables } from '../../../environments/environment'; 
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,11 @@ export class LoginComponent {
   isLoading: boolean = false;
   loginSuccess: boolean = false;
 
-  constructor(private router: Router) {}
+  private correctUsername: string = 'john_doe85_user'; // A gift for you guys
+  private correctPassword: string = environment_variables.credentials.password;
+
+  constructor(private router: Router) {
+  }
 
   verifyUser() {
     // Reset errors
@@ -29,13 +34,12 @@ export class LoginComponent {
     // Simulate login check
     console.log('Attempting to log in with:', this.username);
     this.isLoading = false;
-    if (this.username === 'testuser' && this.password === 'password') {
+    if (this.username === this.correctUsername && this.password === this.correctPassword) {
       this.loginSuccess = true;
       localStorage.setItem('isLoggedIn', 'true');
       this.router.navigate(['/two-factor-auth']);
     } else {
       this.loginError = 'Invalid username or password';
     }
-    
   }
 }

@@ -19,7 +19,7 @@
         type="text"
         class="security-answer-input"
         placeholder="Enter your answer"
-        [(ngModel)]="inputAnswer1"
+        [(ngModel)]="input_answer_first_pet"
         name="question-input-1"
         required
         [class.error]="showError"
@@ -32,7 +32,7 @@
         type="text"
         class="security-answer-input"
         placeholder="Enter your answer"
-        [(ngModel)]="inputAnswer2"
+        [(ngModel)]="input_answer_maiden_name"
         name="question-input-2"
         required
         [class.error]="showError"
@@ -45,14 +45,14 @@
         type="text"
         class="security-answer-input"
         placeholder="Enter your answer"
-        [(ngModel)]="inputAnswer3"
+        [(ngModel)]="input_answer_city"
         name="question-input-3"
         required
         [class.error]="showError"
       />
     </div>
 
-    <div class="error-message" [class.visible]="showError && (inputAnswer1 != answer1 || inputAnswer2 != answer2 || inputAnswer3 !== answer3)">
+    <div class="error-message" [class.visible]="showError && (input_answer_first_pet != answer_first_pet || input_answer_maiden_name != answer_maiden_name || input_answer_city !== answer_city)">
       One or more answers are incorrect.
     </div>
 
