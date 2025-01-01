@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment_variables } from '../../../environments/environment';
 
 @Component({
   selector: 'app-two-factor-auth',
@@ -27,7 +28,8 @@ export class TwoFactorAuthComponent implements OnInit, OnDestroy {
   }
 
   generate2FACode() {
-    this.generatedCode = Math.floor(10 + Math.random() * 90).toString();
+    // this.generatedCode = Math.floor(10 + Math.random() * 90).toString();
+    this.generatedCode = environment_variables.mfa.code.toString();
     this.timeLeft = 300; // Reset timer when new code is generated
     console.log('Generated 2FA Code:', this.generatedCode);
   }

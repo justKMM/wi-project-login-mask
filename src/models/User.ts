@@ -38,7 +38,7 @@ export const users: User[] = [
     },
     {
         id: 6,
-        username: 'dadickindason06',
+        username: 'daniel06',
         name: "Daniel Dickinson",
         image_uri: "/profile_imgs/user6.jpg"
     },
@@ -50,8 +50,8 @@ export const users: User[] = [
     },
     {
         id: 8,
-        username: 'its_me_ffker08',
-        name: "Fang Fckery",
+        username: 'fang_fülla08',
+        name: "Fang Füller",
         image_uri: "/profile_imgs/user8.jpg"
     }
 ];
