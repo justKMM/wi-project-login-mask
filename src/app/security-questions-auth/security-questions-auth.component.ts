@@ -14,12 +14,9 @@ export class SecurityQuestionsAuthComponent {
     'What is the city you were born in?'
   ];
   answers = environment_variables.security_answers;
-  index1: number = 0;
-  index2: number = 1;
-  index3: number = 2;
-  question1: string = this.questions[this.index1];
-  question2: string = this.questions[this.index2];
-  question3: string = this.questions[this.index3];
+  question1: string = this.questions[0];
+  question2: string = this.questions[1];
+  question3: string = this.questions[2];
   answer_first_pet: string = this.answers.first_pet;
   answer_maiden_name: string = this.answers.maiden_name;
   answer_city: string = this.answers.city;

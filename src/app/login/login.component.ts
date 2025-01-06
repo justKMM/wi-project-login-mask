@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment_variables } from '../../../environments/environment'; 
+import { currentUser } from '../../../environments/global_variables';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent {
   isLoading: boolean = false;
   loginSuccess: boolean = false;
 
-  private correctUsername: string = 'john_doe85_user'; // A gift for you guys
+  private correctUsername: string = currentUser.username; // A gift for you guys
   private correctPassword: string = environment_variables.credentials.password;
 
   constructor(private router: Router) {

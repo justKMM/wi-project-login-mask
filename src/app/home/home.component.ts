@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Post, posts, getPostById, getPostsByUser } from '../../models/Post';
+import { posts } from '../../models/Post';
 import { User, users } from '../../models/User';
+import { currentUser } from '../../../environments/global_variables'
 
 @Component({
   selector: 'app-home',
@@ -9,12 +10,7 @@ import { User, users } from '../../models/User';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  currentUser: User = {
-    id: 38,
-    username: 'johndoe038',
-    name: 'John Doe',
-    image_uri: '/profile_imgs/currentUser.jpg',
-  };
+  currentUser: User = currentUser;
 
   posts = posts;
   users = users;

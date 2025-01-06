@@ -9,8 +9,8 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'two-factor-auth', component: TwoFactorAuthComponent, canActivate: [LoginAuthGuard] },
-  { path: 'security-questions-auth', component: SecurityQuestionsAuthComponent, canActivate: [LoginAuthGuard, TwoFactorAuthGuard] },
+  { path: 'two-factor-auth', component: TwoFactorAuthComponent},
+  { path: 'security-questions-auth', component: SecurityQuestionsAuthComponent},
   { path: 'home', component: HomeComponent, canActivate: [LoginAuthGuard, TwoFactorAuthGuard, SecurityQuestionsAuthGuard] },
   { path: '**', redirectTo: 'home' }
 ];
