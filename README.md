@@ -39,8 +39,13 @@ You can either:
 ```bash
 git clone https://github.com/justKMM/wi-project-login-mask.git
 ```
+> This is the public URL of the repository in Github. To run this command from your local Terminal, you first have to [install Git](https://github.com/git-guides/install-git).
 
-> This is the public URL of the repository in Github. To run this command from your local Terminal, you first have to [install Git](https://github.com/git-guides/install-git). 
+<br>
+
+![image](https://github.com/user-attachments/assets/b3b0e371-110f-4f3e-b62a-b32306819507)
+> Here you can find either the button to download the .zip file, or the URL to clone the repository.
+
 
 ### Run the Application
 
