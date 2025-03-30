@@ -1,27 +1,81 @@
 # LoginMask
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.9.
+## Disclaimers
 
-## Development server
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.9 to assist in the Cyber Security course conducted by students of Hochschule Bonn-Rhein-Sieg on 10. January 2025. All similarities to actual product(s) and/or people are coincidental and unintentional. This single-page web application is purely frontend, runs on the client side, and does not collect any data or information from its user(s). This project was created purely for educational purposes. We do not condone or promote any illegal activity.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This application is fully open-sourced and can be used, edited, changed for any personal/commercial purposes (have to be legal of course). However, this application was built not up to industry-standard, and there will be no future update/maintainence since it was only designed to be used for our university project, so be careful when you decide to use it for production purposes.
 
-## Code scaffolding
+## How to get the application running
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Prerequisites
 
-## Build
+Make sure you have the following installed on your local machine:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- [Node.js (LTS recommended)](https://nodejs.org/)
+- [Angular CLI](https://angular.io/cli)
 
-## Running unit tests
+To install them:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+**Install Node.js:**
 
-## Running end-to-end tests
+Go to [https://nodejs.org](https://nodejs.org) and download the LTS version for your operating system.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+**Install Angular CLI:**
 
-## Further help
+After installing Node.js, run the following command in your terminal:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+npm install -g @angular/cli
+```
+
+### Clone the Repository
+
+You can either:
+
+- Download the `.zip` file from the repository and extract it, or
+- Clone the repository using Git:
+
+```bash
+git clone https://github.com/justKMM/wi-project-login-mask.git
+```
+
+> This is the public URL of the repository in Github. To run this command from your local Terminal, you first have to [install Git](https://github.com/git-guides/install-git). 
+
+### Run the Application
+
+Navigate to the project directory:
+
+```bash
+cd LoginMask
+```
+
+Install the project dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+ng serve
+```
+
+Then open your browser and navigate to:
+
+```
+http://localhost:4200/
+```
+
+The application will automatically reload if you make changes to the source files.
+
+## Further Help
+
+To get more help on the Angular CLI, use:
+
+```bash
+ng help
+```
+
+Or check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
